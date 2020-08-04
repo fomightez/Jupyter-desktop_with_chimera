@@ -12,3 +12,6 @@ gimp
 python-tk # based on https://stackoverflow.com/questions/26702119/installing-tkinter-on-ubuntu-14-04
 mesa-utils # based on http://plato.cgl.ucsf.edu/pipermail/chimera-users/2012-November/008132.html
 libtogl-dev # based on https://launchpad.net/ubuntu/+source/togl
+libglu1-mesa-dev # based on http://www.codebind.com/linux-tutorials/install-opengl-ubuntu-linux/
+freeglut3-dev  # based on http://www.codebind.com/linux-tutorials/install-opengl-ubuntu-linux/
+mesa-common-dev # based on http://www.codebind.com/linux-tutorials/install-opengl-ubuntu-linux/

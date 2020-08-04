@@ -15,3 +15,5 @@ libtogl-dev # based on https://launchpad.net/ubuntu/+source/togl
 libglu1-mesa-dev # based on http://www.codebind.com/linux-tutorials/install-opengl-ubuntu-linux/
 freeglut3-dev  # based on http://www.codebind.com/linux-tutorials/install-opengl-ubuntu-linux/
 mesa-common-dev # based on http://www.codebind.com/linux-tutorials/install-opengl-ubuntu-linux/
+build-dep 
+mesa

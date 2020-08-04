@@ -10,4 +10,5 @@ vlc
 links2
 gimp
 python-tk # based on https://stackoverflow.com/questions/26702119/installing-tkinter-on-ubuntu-14-04
+mesa-utils # based on http://plato.cgl.ucsf.edu/pipermail/chimera-users/2012-November/008132.html
 

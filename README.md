@@ -1,40 +1,74 @@
 # Jupyter Desktop Server with UCSF Chimera installed
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/fomightez/Jupyter-desktop_with_chimera/master?urlpath=desktop)
 
-## How to use
+## How to use <=== CURRENTLY DOESN'T WORK DUE TO OPENGL ISSUE?!?!?
 
 To get started, click on `launch binder` badge at the top of bottom of this page.
 
 After launch, when the linux desktop comes up, choose 'Use default config' button on the left.
 
-In the upper left of the desktop screen, click on `Applications` > select `Run Program...` from the top of the list, and enter `pymol` (all lowercase). Click the `Launch` button below where you entered `pymol`
-That will Launch PyMOL on a remote, temporary computer streaming in your browser.
+Use Firefox to download the linux installer for UCSF Chimera.
 
-Choose `Skip Activation` at the bottom the dialog box that comes up as PyMOL starts.
+Opened a terminal using icon at the bottom.
+Moved the installer from `Downloads` to home using:
 
-Adjust the width of the PyMOL window, if you like, by dragging on the bottom right corner.
-
-Next to any `PyMOL>` prompt you see on the screen, type `fetch` followed by a PDB id and you'll be viewing your choice of molecule.
-
-If you end up making anything useful, such as a session file (ending in `.pse`) or image file, you'll want to download it to your local machine. You'll need to do that from a different interface with the remote machine. Look at the URL of your PyMOL session screen and copy it. It will look similar to the following but be unique in some ways, such as the part in front of `mybinder` may be different depending on where in the global network the remote machine is:
-
-```
-https://hub.gke.mybinder.org/user/fomightez-jupyt-ktop_with_pymol-r7gbgfa3/desktop/?token=zdDDLXhXTzSw7Xcg0g1zfg
+```bash
+mv Downloads/chimera-1.14-linux_x86_64.bin
 ```
 
-You want to look for `desktop` in front of `/?token..` and copy everything in front of `desktop` to **ANOTHER browser window** and add on `lab` at the end. This will result in something like this example below that's built on the example above:
+Change permissions on installer following along with step number (2) under 'Downloading and Installation' at https://www.cgl.ucsf.edu/chimera/data/downloads/1.5.2/linux.html
 
+```bash
+chmod +x chimera-1.14-linux_x86_64.bin
 ```
-https://hub.gke.mybinder.org/user/fomightez-jupyt-ktop_with_pymol-r7gbgfa3/lab
+
+Then run the installer by entering:
+
+```bash
+./chimera-1.14-linux_x86_64.bin
 ```
 
-Hit return to load the page. Your generated PyMOL session file (ending in `.pse`) or image file should appear in the list of files in the file navigation panel in the upper. Right-click on the file in the list, and select `Download` from the middle of the list of possible actions.
+Accepting the defaults except use `4` when have a long list of where to put link.
 
-----
+Then ready to launch. (Option A: is to type `chimera` in terminal.)
 
-If you want to use PyMOL reproducibly using scripts and the API, see [here for PyMOL use via commandline on Jupyter using MyBinder](https://github.com/fomightez/pymol-binder).
+When launch UCSF chimera by selecting `Applications` > `Run Program..` and then typing `chimera`, chimera tries to launch and I see a splach screen in chimera that says:
+
+```bash
+chimera startup error
+
+Error initalizing OpenGL: X server is missing OpenGL GLX extension
+Couldn't configure togl widget
+```
+
+Troubleshooting the current road-block
+--------------------------------------
+
+The issue seems to be summarized [here](https://virtualgl.org/vgldoc/2_2_1/):
+>"Some remote display software, such as VNC, lacks the ability to run OpenGL applications at all. Other remote display software forces OpenGL applications to use a slow software-only OpenGL renderer, to the detriment of performance as well as compatibility. The traditional method of displaying OpenGL applications to a remote X server (indirect rendering) supports 3D hardware acceleration, but this approach causes all of the OpenGL commands and 3D data to be sent over the network to be rendered on the client machine. This is not a tenable proposition unless the data is relatively small and static, unless the network is very fast, and unless the OpenGL application is specifically tuned for a remote X-Windows environment."
+
+Troubleshooting ideas:
+
+https://www.cgl.ucsf.edu/chimera/data/downloads/1.5/linux.html
+
+from http://www.cgl.ucsf.edu/chimera/graphics/updatelinux.html and , I see `glxinfo` is the way to explore further but When I run `glxinfo` on command line I get:
+
+```bash
+Error: couldn't find RGB GLX visual or fbconfig
+```
+
+glxgears gives a similar issue. Do I need `xvfb` started?
 
 
+https://github.com/mne-tools/mne-binder/issues/2#issuecomment-479523225
+
+https://discourse.slicer.org/t/3d-slicer-cloud-computing-again/5781/11
+
+
+http://www.cgl.ucsf.edu/chimera/graphics/updatelinux.html
+
+
+https://www.wikihow.com/Install-Mesa-(OpenGL)-on-Linux-Mint
 
 -----
 
@@ -42,9 +76,6 @@ If you want to use PyMOL reproducibly using scripts and the API, see [here for P
 
 [Original source repo](https://github.com/yuvipanda/jupyter-desktop-server) allows running Run XFCE (or other desktop environments) on a JupyterHub. Source based on https://github.com/ryanlovett/nbnovnc and a fork of https://github.com/manics/jupyter-omeroanalysis-desktop .
 
-Details on some of the underlying tech is found under 'Details' [here](https://www.ovirt.org/develop/release-management/features/virt/novnc-console.html). `pymol_preivew` added from [here](https://github.com/mmagnus/rna-tools/tree/master/rna_tools/tools/pymol_preview_generator). PyMOL added as described [here](https://github.com/fomightez/pymol-binder).
-
-Originally, dimensions of the desktop geometry were set to '1680x1050' due to [original source repo](https://github.com/yuvipanda/jupyter-desktop-server), but PyMOL interface was overly pixelated; copied '1024x768' geometry from [here](https://github.com/manics/jupyter-omeroanalysis-desktop/blob/napari-binder/jupyter_desktop/jupyter_desktop.py).
 
 
 ----

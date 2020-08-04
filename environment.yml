@@ -4,11 +4,10 @@ channels:
   - defaults
 dependencies:
   - websockify
-  - pymol>=2.3
   - libglu
   - glew
   - pip
   - pip:
     - .
-    - rna-tools
+
     

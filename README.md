@@ -1,5 +1,5 @@
-# Jupyter Desktop Server with PyMOL installed
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/fomightez/Jupyter-desktop_with_pymol/master?urlpath=desktop)
+# Jupyter Desktop Server with UCSF Chimera installed
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/fomightez/Jupyter-desktop_with_chimera/master?urlpath=desktop)
 
 ## How to use
 
@@ -34,12 +34,6 @@ Hit return to load the page. Your generated PyMOL session file (ending in `.pse`
 
 If you want to use PyMOL reproducibly using scripts and the API, see [here for PyMOL use via commandline on Jupyter using MyBinder](https://github.com/fomightez/pymol-binder).
 
------
-
-
-This repo was originally meant to be able to run `pymol_preview_generator.py` from [here](https://github.com/mmagnus/rna-tools/tree/master/rna_tools/tools/pymol_preview_generator); however, the XFCE desktop doesn't seem to allow the icons to be changed (even using `gio set`), and so that was **a dead-end effort for now**. However, since PyMOL did at leat work in the desktop GUI, I left it in this state and a use case arose later where I could use it for training.
-
-
 
 
 -----
@@ -55,4 +49,4 @@ Originally, dimensions of the desktop geometry were set to '1680x1050' due to [o
 
 ----
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/fomightez/Jupyter-desktop_with_pymol/master?urlpath=desktop)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/fomightez/Jupyter-desktop_with_chimera/master?urlpath=desktop)

@@ -9,5 +9,5 @@ xubuntu-icon-theme
 vlc
 links2
 gimp
-python-tk
+python-tk # based on https://stackoverflow.com/questions/26702119/installing-tkinter-on-ubuntu-14-04
 

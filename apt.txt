@@ -21,3 +21,4 @@ binutils-gold # based on https://www.wikihow.com/Install-Mesa-(OpenGL)-on-Linux-
 libglew-dev # based on https://www.wikihow.com/Install-Mesa-(OpenGL)-on-Linux-Mint
 libglew1.5-dev # based on https://www.wikihow.com/Install-Mesa-(OpenGL)-on-Linux-Mint
 libglm-dev # based on https://www.wikihow.com/Install-Mesa-(OpenGL)-on-Linux-Mint
+lib64mesagl

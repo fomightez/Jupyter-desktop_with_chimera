@@ -2,12 +2,12 @@
 
 # Install Chimera
 # based on https://www.cgl.ucsf.edu/chimera/data/downloads/1.14/linux_x86_64.html
-chmod +x chimera-1.14-linux_x86_64.bin
+#chmod +x chimera-1.14-linux_x86_64.bin
 
 
 # Add Chimera to the path
 mkdir -p ~/.local/bin
 # to create alias for bendIt ("~/.local/bin" is in the PATH)
-cd ~/.local/bin
-ln -s ~/CHIMERA/bin/chimera chimera
+#cd ~/.local/bin
+#ln -s ~/CHIMERA/bin/chimera chimera
 

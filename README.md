@@ -65,6 +65,10 @@ https://github.com/mne-tools/mne-binder/issues/2#issuecomment-479523225
 https://discourse.slicer.org/t/3d-slicer-cloud-computing-again/5781/11
 
 
+https://groups.google.com/a/lbl.gov/forum/?nomobile=true#!topic/singularity/F1mMAU2ex9M
+
+https://askubuntu.com/questions/418532/whats-ubuntu-package-for-virtualgl-libs
+
 http://www.cgl.ucsf.edu/chimera/graphics/updatelinux.html
 
 

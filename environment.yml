@@ -1,11 +1,12 @@
 channels:
   - manics
-  - schrodinger
+  - conda-forge
   - defaults
 dependencies:
   - websockify
   - libglu
   - glew
+  - mesalib
   - pip
   - pip:
     - .

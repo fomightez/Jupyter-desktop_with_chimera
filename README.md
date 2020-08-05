@@ -69,6 +69,10 @@ https://groups.google.com/a/lbl.gov/forum/?nomobile=true#!topic/singularity/F1mM
 
 https://askubuntu.com/questions/418532/whats-ubuntu-package-for-virtualgl-libs
 
+https://forums.developer.nvidia.com/t/error-couldnt-get-an-rgb-double-buffered-visual/108823
+
+`vglrun glxgears` <=== How do I get `vglrun`.
+
 http://www.cgl.ucsf.edu/chimera/graphics/updatelinux.html
 
 

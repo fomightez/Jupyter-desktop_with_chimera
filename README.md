@@ -36,10 +36,11 @@ When launch UCSF chimera by selecting `Applications` > `Run Program..` and then 
 
 ```bash
 chimera startup error
-
 Error initalizing OpenGL: X server is missing OpenGL GLX extension
-Couldn't configure togl widget
+Couldnt configure togl widget
 ```
+
+
 
 Troubleshooting the current road-block
 --------------------------------------
@@ -54,11 +55,31 @@ https://www.cgl.ucsf.edu/chimera/data/downloads/1.5/linux.html
 from http://www.cgl.ucsf.edu/chimera/graphics/updatelinux.html and , I see `glxinfo` is the way to explore further but When I run `glxinfo` on command line I get:
 
 ```bash
-Error: couldn't find RGB GLX visual or fbconfig
+Error: couldnt find RGB GLX visual or fbconfig
 ```
 
 glxgears gives a similar issue. Do I need `xvfb` started?
 
+Yes. Running that  based on Halfgaar's comment [here](https://unix.stackexchange.com/questions/104914/why-does-xvfb-run-glxgears-fail-with-an-swrast-error)allows `glxgears` and `glxinfo` to run. First to show for `glxgears`.
+
+```bash
+xvfb-run --server-args "-screen 0 1920x1080x24" glxgears
+```
+
+Did CTRL-C to stop it after clear `glxgears` was running. I don't know if it stops itself.
+
+So I ran the following to check the OpenGL info like I had seen advised at [here](http://ubuntuhandbook.org/index.php/2019/12/install-mesa-19-3-ubuntu-18-04-19-10/).
+
+
+```bash
+xvfb-run --server-args "-screen 0 1920x1080x24" glxinfo | grep "OpenGL"
+```
+Works and gives me information about OpenGL using `Mesa`.
+
+Next problem to overcome is that want UCSF Chimera to run in the XFCE4 OS GUI. Will this help there? I suspect not since I tried with Firefox and it just waited in terminal as if running and when I tried to open application in OS GUI, it said it was running. So it works but I cannot access it in the GUI this way. How to get Firefox in the OS GUI to use the MESA? [This](https://bugzilla.mozilla.org/show_bug.cgi?id=731836) seemed most helpful I've found so far in regards to that, and then I also found [this](https://superuser.com/questions/930807/using-a-locally-built-libosmesa-to-enable-webgl-in-firefox) but even that person seemed to not be able to get it to work(??), but I haven't figured out how quite yet.
+
+
+Troubleshooting further info
 
 https://github.com/mne-tools/mne-binder/issues/2#issuecomment-479523225
 
@@ -71,9 +92,11 @@ https://askubuntu.com/questions/418532/whats-ubuntu-package-for-virtualgl-libs
 
 https://forums.developer.nvidia.com/t/error-couldnt-get-an-rgb-double-buffered-visual/108823
 
-`vglrun glxgears` <=== How do I get `vglrun`.
+`vglrun glxgears` <=== How do I get `vglrun`? I tried what was at https://askubuntu.com/questions/418532/whats-ubuntu-package-for-virtualgl-libs but still not running
 
 http://www.cgl.ucsf.edu/chimera/graphics/updatelinux.html
+
+http://ubuntuhandbook.org/index.php/2019/12/install-mesa-19-3-ubuntu-18-04-19-10/
 
 
 https://www.wikihow.com/Install-Mesa-(OpenGL)-on-Linux-Mint

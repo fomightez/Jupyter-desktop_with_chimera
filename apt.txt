@@ -28,3 +28,4 @@ libgconf2-4
 xvfb
 libxss1
 mininet
+xterm

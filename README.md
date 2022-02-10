@@ -107,6 +107,24 @@ https://www.wikihow.com/Install-Mesa-(OpenGL)-on-Linux-Mint
 
 [Original source repo](https://github.com/yuvipanda/jupyter-desktop-server) allows running Run XFCE (or other desktop environments) on a JupyterHub. Source based on https://github.com/ryanlovett/nbnovnc and a fork of https://github.com/manics/jupyter-omeroanalysis-desktop .
 
+------
+
+### Testing Pandasgui here
+
+Since this had build essentials installed by apt, I thought it would work to get past the issue I was seeing about `evdev`` installing with pip, as pointe out [here](https://github.com/adamerose/PandasGUI/issues/81#issuecomment-808436130), and fortunately it did. So was wondering if I can use it now?
+Seems I can use it in the desktop if I do a little more:
+
+Opened JupyterLab in another tab and in terminal there ran the following following [Pandasgui documentation] to install the current pandasgui:
+```shell
+pip install git+https://github.com/adamerose/pandasgui.git
+```
+
+I know that seems redundant since conda supposedly installed pandasgui, but despite looking I couldn't find where to point at to use it on command line, and turns out this trick works to add `pandasgui` to path.
+
+Now if I open a new terminal in the deksptop and type `pandasgui --help` it opens an empty pandasgui graphic program window! (Note I was expecting usage text because of `--help` but it opened the program. `pandasgui` alone did nothing.)
+
+I suspect if I called it with a tab-separated file or a dataframe maybe, it would open it. It has an `import` in it that lists recognizing several file formats.  
+I'll note when I try to use 'Browser Sample Datasets' inside the program's window, it chokes on it saying `os` has no attribute `startfile.`
 
 
 ----

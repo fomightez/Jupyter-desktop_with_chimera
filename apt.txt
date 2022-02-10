@@ -27,3 +27,4 @@ libgtk2.0.0
 libgconf2-4
 xvfb
 libxss1
+libpci-dev
